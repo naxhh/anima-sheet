@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import withRoot from './withRoot';
 import AppRouter from './AppRouter';
-import './App.css';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
