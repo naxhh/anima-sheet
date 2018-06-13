@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 
 import Grid from '@material-ui/core/Grid';
-
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
@@ -34,17 +34,24 @@ const Characters = props => (
     <Grid container justify="center" spacing={16}>
       {data.map((character, key) => (
         <Grid key={key} item>
-          <Card className={props.classes.card}>
-            <CardContent>
-              <Typography variant="headline" align="center" component="h2">
-                {character.name}
-              </Typography>
+          <Link
+            to={`/character/${character.name}`}
+            style={{ textDecoration: 'none' }}
+          >
+            <Card className={props.classes.card}>
+              <CardContent>
+                <Typography variant="headline" align="center" component="h2">
+                  {character.name}
+                </Typography>
 
-              <Divider className={props.classes.divider} />
+                <Divider className={props.classes.divider} />
 
-              <Typography variant="caption">{character.description}</Typography>
-            </CardContent>
-          </Card>
+                <Typography variant="caption">
+                  {character.description}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Link>
         </Grid>
       ))}
     </Grid>

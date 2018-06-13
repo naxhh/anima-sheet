@@ -8,7 +8,7 @@ const AppRouter = props => (
   <Router>
     <AppBar>
       <Route exact path="/" component={Characters} />
-      <Route exact path="/character" component={Sheet} />
+      <Route exact path="/character/:name" component={Sheet} />
     </AppBar>
   </Router>
 );
