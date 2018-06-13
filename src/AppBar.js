@@ -17,20 +17,14 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import FaceIcon from '@material-ui/icons/Face';
+import GavelIcon from '@material-ui/icons/Gavel';
+import GradeIcon from '@material-ui/icons/Grade';
+import GroupWorkIcon from '@material-ui/icons/GroupWork';
 
 const drawerWidth = 240;
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    height: 430,
-    zIndex: 1,
-    overflow: 'hidden',
-    position: 'relative',
-    display: 'flex'
-  },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'margin'], {
@@ -83,7 +77,8 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
-    padding: theme.spacing.unit * 3
+    padding: theme.spacing.unit * 3,
+    'padding-top': theme.spacing.unit * 10
   }
 });
 
@@ -150,25 +145,38 @@ class AppBar extends Component {
           </div>
           <Divider />
           <List>
-            {/* Add correct items + routes */}
-
             <ListItem button>
               <ListItemIcon>
-                <InboxIcon />
+                <FaceIcon />
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="Character" />
             </ListItem>
 
             <ListItem button>
               <ListItemIcon>
-                <DraftsIcon />
+                <GavelIcon />
               </ListItemIcon>
-              <ListItemText primary="Drafts" />
+              <ListItemText primary="Combat" />
+            </ListItem>
+
+            <ListItem button>
+              <ListItemIcon>
+                <GradeIcon />
+              </ListItemIcon>
+              <ListItemText primary="Secondaries" />
+            </ListItem>
+
+            <ListItem button>
+              <ListItemIcon>
+                <GroupWorkIcon />
+              </ListItemIcon>
+              <ListItemText primary="Magic" />
             </ListItem>
           </List>
           <Divider />
           <List>{[]}</List>
         </Drawer>
+        <div className={classes.content}>{this.props.children}</div>
       </Fragment>
     );
   }

@@ -1,14 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import AppBar from './AppBar';
 import Sheet from './sheet/index.js';
 
 const AppRouter = props => (
   <Router>
-    <div>
-      {props.children}
-
+    <AppBar>
       <Route exact path="/" component={Sheet} />
-    </div>
+    </AppBar>
   </Router>
 );
 
