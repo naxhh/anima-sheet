@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { Link } from 'react-router-dom';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,14 +12,19 @@ import GavelIcon from '@material-ui/icons/Gavel';
 import GradeIcon from '@material-ui/icons/Grade';
 import GroupWorkIcon from '@material-ui/icons/GroupWork';
 
-const AppBar = props => (
+const MainList = ({ match }) => (
   <List>
-    <ListItem button>
-      <ListItemIcon>
-        <FaceIcon />
-      </ListItemIcon>
-      <ListItemText primary="Character" />
-    </ListItem>
+    <Link
+      to={`/character/${match.params.name}`}
+      style={{ textDecoration: 'none' }}
+    >
+      <ListItem button>
+        <ListItemIcon>
+          <FaceIcon />
+        </ListItemIcon>
+        <ListItemText primary="Character" />
+      </ListItem>
+    </Link>
 
     <ListItem button>
       <ListItemIcon>
@@ -41,4 +49,8 @@ const AppBar = props => (
   </List>
 );
 
-export default AppBar;
+MainList.propTypes = {
+  match: PropTypes.object.isRequired
+};
+
+export default MainList;

@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import AppBar from './structure/AppBar';
+import withAppBar from './structure/withAppBar';
 import Sheet from './sheet';
 import Characters from './characters';
 
 const AppRouter = props => (
   <Router>
-    <AppBar>
-      <Route exact path="/" component={Characters} />
-      <Route exact path="/character/:name" component={Sheet} />
-    </AppBar>
+    <Fragment>
+      <Route exact path="/" component={withAppBar(Characters)} />
+      <Route exact path="/character/:name" component={withAppBar(Sheet)} />
+    </Fragment>
   </Router>
 );
 

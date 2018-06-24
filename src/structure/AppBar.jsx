@@ -32,7 +32,7 @@ class AppBar extends Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme, match } = this.props;
 
     return (
       <Fragment>
@@ -82,7 +82,7 @@ class AppBar extends Component {
             </IconButton>
           </div>
           <Divider />
-          <MainList />
+          <MainList match={match} />
           <Divider />
           <List>{[]}</List>
         </Drawer>
@@ -94,7 +94,8 @@ class AppBar extends Component {
 
 AppBar.propTypes = {
   classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired
 };
 
 export default withStyles(styles, { withTheme: true })(AppBar);
