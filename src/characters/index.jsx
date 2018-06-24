@@ -12,7 +12,7 @@ import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 
-import data from './sample';
+import { withCharacters } from '../data';
 
 const styles = theme => ({
   card: {
@@ -32,7 +32,7 @@ const styles = theme => ({
 const Characters = props => (
   <Fragment>
     <Grid container justify="center" spacing={16}>
-      {data.map((character, key) => (
+      {props.characters.map((character, key) => (
         <Grid key={key} item>
           <Link
             to={`/character/${character.name}`}
@@ -68,7 +68,15 @@ const Characters = props => (
 );
 
 Characters.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  characters: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      description: PropTypes.string
+    })
+  )
 };
 
-export default withStyles(styles, { withTheme: true })(Characters);
+export default withStyles(styles, { withTheme: true })(
+  withCharacters(Characters)
+);

@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
+import { withCharacter } from '../data';
+
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
 const Sheet = props => (
-  <div className={props.classes.content}>
+  <div>
     <Grid
       container
       spacing={16}
@@ -14,17 +16,22 @@ const Sheet = props => (
       direction="column"
       justify="flex-start"
     >
-      <Grid item>
-        <Paper>asd</Paper>
-        <Paper>asd</Paper>
-        <Paper>asd</Paper>
-      </Grid>
+      {props.character && (
+        <Grid item>
+          <Paper>{props.character.name}</Paper>
+          <Paper>asd</Paper>
+          <Paper>asd</Paper>
+        </Grid>
+      )}
     </Grid>
   </div>
 );
 
 Sheet.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  character: PropTypes.shape({
+    name: PropTypes.string
+  })
 };
 
-export default withStyles({})(Sheet);
+export default withStyles({})(withCharacter(Sheet));
