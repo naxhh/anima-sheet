@@ -9,14 +9,13 @@ import TableRow from '@material-ui/core/TableRow';
 
 // TODO: mobile friendly
 const styles = theme => ({
-  table: {},
   title: {
     'font-weight': 500
   }
 });
 
 const Sheet = ({ classes, character }) => (
-  <Table className={classes.table}>
+  <Table>
     <TableBody>
       <TableRow>
         <TableCell className={classes.title}>Nombre:</TableCell>

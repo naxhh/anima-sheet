@@ -14,6 +14,48 @@ export default [
       weight: '65kg',
       apparence: 6,
       size: 14
+    },
+    characteristics: {
+      agi: {
+        base: 10,
+        actual: '',
+        bonus: 15
+      },
+      con: {
+        base: 10,
+        actual: '',
+        bonus: 15
+      },
+      des: {
+        base: 10,
+        actual: '',
+        bonus: 15
+      },
+      fue: {
+        base: 10,
+        actual: '',
+        bonus: 15
+      },
+      int: {
+        base: 8,
+        actual: '',
+        bonus: 10
+      },
+      pre: {
+        base: 10,
+        actual: '',
+        bonus: 15
+      },
+      pod: {
+        base: 9,
+        actual: '',
+        bonus: 10
+      },
+      vol: {
+        base: 9,
+        actual: '',
+        bonus: 10
+      }
     }
   },
   {

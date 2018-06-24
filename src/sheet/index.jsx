@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 
 import { withCharacter } from '../data';
 import Character from './character';
+import Characteristics from './characteristics';
 
 import Typography from '@material-ui/core/Typography';
 
@@ -14,9 +14,7 @@ import WhatshotIcon from '@material-ui/icons/Whatshot';
 
 const CHARACTER_LABEL = 'Personaje';
 const LIFE_LABEL = 'Vida';
-const CARACTERISTICS_LABEL = 'Características';
-
-const styles = theme => ({});
+const CHARACTERISTICS_LABEL = 'Características';
 
 class Sheet extends Component {
   state = {
@@ -37,9 +35,10 @@ class Sheet extends Component {
         </Typography>
 
         {this.state.tab === CHARACTER_LABEL && (
-          <Fragment>
-            <Character character={character} />
-          </Fragment>
+          <Character character={character} />
+        )}
+        {this.state.tab === CHARACTERISTICS_LABEL && (
+          <Characteristics character={character} />
         )}
 
         <Tabs
@@ -48,7 +47,7 @@ class Sheet extends Component {
           tabs={[
             { label: CHARACTER_LABEL, icon: AccountBoxIcon },
             { label: LIFE_LABEL, icon: LocalPharmacyIcon },
-            { label: CARACTERISTICS_LABEL, icon: WhatshotIcon }
+            { label: CHARACTERISTICS_LABEL, icon: WhatshotIcon }
           ]}
         />
       </Fragment>
@@ -57,10 +56,9 @@ class Sheet extends Component {
 }
 
 Sheet.propTypes = {
-  classes: PropTypes.object.isRequired,
   character: PropTypes.shape({
     name: PropTypes.string
   })
 };
 
-export default withStyles(styles, { withTheme: true })(withCharacter(Sheet));
+export default withCharacter(Sheet);
