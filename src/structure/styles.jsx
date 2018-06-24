@@ -1,3 +1,5 @@
+import grey from '@material-ui/core/colors/grey';
+
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -55,6 +57,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing.unit * 3,
     'padding-top': theme.spacing.unit * 10
+  },
+  title: {
+    textDecoration: 'none',
+    color: grey[100]
   }
 });
 

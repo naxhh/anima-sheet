@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -55,7 +56,9 @@ class AppBar extends Component {
               <MenuIcon />
             </IconButton>
             <Typography variant="title" color="inherit" noWrap>
-              Anima sheets
+              <Link to="/" className={classes.title}>
+                Anima sheets
+              </Link>
             </Typography>
           </Toolbar>
         </AppBarMaterial>
