@@ -56,6 +56,14 @@ export default [
         actual: '',
         bonus: 10
       }
+    },
+    life: {
+      base: 135,
+      category: 5,
+      multi: '',
+      final: 140,
+      actual: 140,
+      history: ['-10', '+10', '-5', '+5']
     }
   },
   {

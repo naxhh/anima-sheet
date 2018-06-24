@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { withCharacter } from '../data';
 import Character from './character';
 import Characteristics from './characteristics';
+import Life from './life';
 
 import Typography from '@material-ui/core/Typography';
 
@@ -40,6 +41,8 @@ class Sheet extends Component {
         {this.state.tab === CHARACTERISTICS_LABEL && (
           <Characteristics character={character} />
         )}
+
+        {this.state.tab === LIFE_LABEL && <Life character={character} />}
 
         <Tabs
           onChange={this.handleChange}

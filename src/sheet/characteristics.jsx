@@ -8,7 +8,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-const Characteristics = ({ classes, character }) => (
+const Characteristics = ({ character }) => (
   <Table>
     <TableHead>
       <TableRow>
@@ -49,4 +49,4 @@ const CustomTableCell = withStyles(theme => ({
   }
 }))(TableCell);
 
-export default withStyles({})(Characteristics);
+export default Characteristics;
